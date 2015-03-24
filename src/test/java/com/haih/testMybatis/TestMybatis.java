@@ -1,13 +1,17 @@
 package com.haih.testMybatis;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.apache.log4j.Logger;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import sun.print.resources.serviceui;
 
 import com.alibaba.fastjson.JSON;
 import com.haih.pojo.User;
@@ -34,5 +38,19 @@ public class TestMybatis {
         System.out.println(user.getUserName());
         LOG.info("值：" + user.getUserName());
         LOG.info(JSON.toJSONString(user));
+    }
+    
+    @Test 
+    public void test2(){
+        List<User> users = new ArrayList<User>();
+        for (int i = 0; i < 3; i++) {
+            User user = new User();
+            user.setAge(i);
+            user.setId(i);
+            user.setPassword("123");
+            user.setUserName("haihu"+i);
+            users.add(user);
+        }
+        userService.insertUsers(users);
     }
 }

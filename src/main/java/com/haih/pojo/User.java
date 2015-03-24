@@ -1,10 +1,34 @@
 package com.haih.pojo;
 
+
 public class User {
     private int id;  
     private String userName;
     private String password;
     private int age;
+    
+    public static class Builder {
+        private final int id;
+        private final String userName;
+        private final String password;
+        private final int age;
+        public Builder(int id,String userName,String password,int age){
+            this.id = id;
+            this.userName = userName;
+            this.password = password;
+            this.age = age;
+        }
+        public User build(){
+            return new User(this);
+        }
+    }
+    private User(Builder builder){
+        id = builder.id;
+        userName = builder.userName;
+        password = builder.password;
+        age = builder.age;
+    }
+    public User(){}
     /**
      * @return the id
      */
