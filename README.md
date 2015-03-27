@@ -1,2 +1,2 @@
 # ssm_practise
-SSM框架 实践
+SSM(spring+springMVC+mybatis)框架 实践
