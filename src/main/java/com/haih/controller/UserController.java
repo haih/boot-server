@@ -18,6 +18,7 @@ import com.haih.service.IUserService;
 public class UserController {
     @Resource
     private IUserService userService;
+    
     @RequestMapping("/showName")
     public String Index(HttpServletRequest request,Model model){
         int userId = Integer.valueOf(request.getParameter("id"));
