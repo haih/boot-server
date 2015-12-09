@@ -21,6 +21,7 @@ public class UserController {
     
     @RequestMapping("/showName")
     public String Index(HttpServletRequest request,Model model){
+    	String tracking = (String)request.getAttribute("trackingID");
         int userId = Integer.valueOf(request.getParameter("id"));
         User user = userService.getUserById(userId);
         model.addAttribute("user", user);
