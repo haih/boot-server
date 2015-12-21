@@ -15,12 +15,16 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 /**
  * @author haih
  *
  */
 public class TrackingFilter implements Filter {
 
+	private final static Logger logger = LoggerFactory.getLogger(TrackingFilter.class);
 	private final static String TRACKING_ID = "trackingID";
 	/* (non-Javadoc)
 	 * @see javax.servlet.Filter#destroy()
@@ -50,7 +54,7 @@ public class TrackingFilter implements Filter {
 	 */
 	@Override
 	public void init(FilterConfig arg0) throws ServletException {
-		System.out.println("init Tracking filter");
+		logger.info("init Tracking filter");
 	}
 
 }
