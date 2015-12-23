@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.haih.utils.tracking;
+package com.haih.common.filter;
 
 import java.io.IOException;
 import java.util.UUID;
@@ -17,6 +17,9 @@ import javax.servlet.http.HttpServletResponse;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.slf4j.MDC;
+
+import com.haih.common.logger.LogContext;
 
 /**
  * @author haih
@@ -46,6 +49,10 @@ public class TrackingFilter implements Filter {
 		String trackingid = UUID.randomUUID().toString();
 		request.setAttribute(TRACKING_ID, trackingid);
 		response.setHeader(TRACKING_ID, trackingid);
+		//insert trackingid to thread local.
+		LogContext.setTrackingid(trackingid);
+		MDC.put("TRACKINGID", LogContext.getTrackingid());
+		logger.info("doFilter Tracking filter");
 		chain.doFilter(request, response);
 	}
 

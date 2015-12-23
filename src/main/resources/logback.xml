@@ -29,7 +29,9 @@
 
 	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
 		<layout class="ch.qos.logback.classic.PatternLayout">
-			<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %X{TRACKINGID}, %p, %c{50}, %t, %ex, %F:%L, %M : %m%n</pattern>
+		<!--%d{pattern}:date; %X{MDC};%c{length}:fully-qualified class;
+		    %F : file; %L : line, %M:method -->
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %X{TRACKINGID}, %p,%c{50}, %F:%L, %M: %m%n</Pattern>
 		</layout>
 	</appender>
 	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">

@@ -4,6 +4,8 @@ package com.haih.controller;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -18,9 +20,10 @@ import com.haih.service.IUserService;
 public class UserController {
     @Resource
     private IUserService userService;
-    
+    private static Logger LOG = LoggerFactory.getLogger(UserController.class);
     @RequestMapping("/showName")
     public String Index(HttpServletRequest request,Model model){
+    	LOG.info("Index begin!");
     	String tracking = (String)request.getAttribute("trackingID");
         int userId = Integer.valueOf(request.getParameter("id"));
         User user = userService.getUserById(userId);
