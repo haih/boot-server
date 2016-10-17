@@ -13,7 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import com.alibaba.fastjson.JSON;
-import com.haih.pojo.User;
+import com.haih.model.UserOld;
 import com.haih.service.IUserService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
@@ -33,7 +33,7 @@ public class TestMybatis {
 	// }
 	@Test
 	public void test1() {
-		User user = userService.getUserById(1);
+		UserOld user = userService.getUserById(1);
 		System.out.println(user.getUserName());
 		LOG.info("值：" + user.getUserName());
 		LOG.info(JSON.toJSONString(user));
@@ -41,9 +41,9 @@ public class TestMybatis {
 
 	@Test
 	public void test2() {
-		List<User> users = new ArrayList<User>();
+		List<UserOld> users = new ArrayList<UserOld>();
 		for (int i = 0; i < 3; i++) {
-			User user = new User();
+			UserOld user = new UserOld();
 			user.setAge(i);
 			user.setId(i);
 			user.setPassword("123");

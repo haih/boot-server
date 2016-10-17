@@ -4,8 +4,6 @@
 package com.haih.utils.tracking;
 
 import java.util.UUID;
-import java.util.concurrent.Executor;
-import java.util.concurrent.Executors;
 
 /**
  * @author haih

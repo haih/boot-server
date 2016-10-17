@@ -1,7 +1,7 @@
-package com.haih.pojo;
+package com.haih.model;
 
 
-public class User {
+public class UserOld {
     private int id;  
     private String userName;
     private String password;
@@ -18,17 +18,17 @@ public class User {
             this.password = password;
             this.age = age;
         }
-        public User build(){
-            return new User(this);
+        public UserOld build(){
+            return new UserOld(this);
         }
     }
-    private User(Builder builder){
+    private UserOld(Builder builder){
         id = builder.id;
         userName = builder.userName;
         password = builder.password;
         age = builder.age;
     }
-    public User(){}
+    public UserOld(){}
     /**
      * @return the id
      */

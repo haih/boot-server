@@ -8,7 +8,7 @@
 <meta http-equiv="pragma" content="no-cache"> 
 <meta http-equiv="cache-control" content="no-cache"> 
 <meta http-equiv="expires" content="0"> 
-<title>Show User</title>
+<title>User Info</title>
 <script src="http://code.jquery.com/jquery-2.1.3.min.js">
 </script>
 <!-- <script>
@@ -30,11 +30,13 @@ $(document).ready(function(){
  -->
 </head>
 <body>
-	<c:forEach var="userlist" items="${user}">
-    	id: <a href="${userlist.value.id}/info">${userlist.value.id}</a> &nbsp;
-    	userName:${userlist.value.userName}
-    	<a href="${userlist.value.id}">del</a> <br>
-	</c:forEach>
+	<div>
+		<span>id: ${user.id} </span><br>
+		<span>userName: ${user.userName}</span>
+	</div>
+	
+    	
+    	
     
 </body>
 

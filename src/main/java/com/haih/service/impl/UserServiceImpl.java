@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.haih.dao.IUserDao;
-import com.haih.pojo.User;
+import com.haih.model.UserOld;
 import com.haih.service.IUserService;
 
 @Service("userService")
@@ -23,14 +23,14 @@ public class UserServiceImpl implements IUserService{
     private IUserDao userDao;
     
     @Override
-    public User getUserById(int userId) {
+    public UserOld getUserById(int userId) {
         return this.userDao.selectByPrimaryKey(userId);
     }
     
     //此处添加DB事务处理
     @Transactional
     @Override
-    public void insertUsers(List<User> users){
+    public void insertUsers(List<UserOld> users){
     	LOG.debug("UserServiceImpl insertUsers begin~");
         for (int i = 0; i < users.size(); i++) {
             if(i < 2){
@@ -40,7 +40,7 @@ public class UserServiceImpl implements IUserService{
             }
         }
     }
-    public void insertUser(User user){
+    public void insertUser(UserOld user){
         this.userDao.insert(user);
     }
 }

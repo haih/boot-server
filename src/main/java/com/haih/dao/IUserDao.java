@@ -1,19 +1,19 @@
 package com.haih.dao;
 
 
-import com.haih.pojo.User;
+import com.haih.model.UserOld;
 
 
 public interface IUserDao {
     int deleteByPrimaryKey(Integer id);
 
-    int insert(User record);
+    int insert(UserOld record);
 
-    int insertSelective(User record);
+    int insertSelective(UserOld record);
 
-    User selectByPrimaryKey(Integer id);
+    UserOld selectByPrimaryKey(Integer id);
 
-    int updateByPrimaryKeySelective(User record);
+    int updateByPrimaryKeySelective(UserOld record);
 
-    int updateByPrimaryKey(User record);
+    int updateByPrimaryKey(UserOld record);
 }
