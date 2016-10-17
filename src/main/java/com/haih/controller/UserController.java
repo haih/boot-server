@@ -36,7 +36,6 @@ public class UserController {
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String login(String id,String password,HttpServletRequest request, Model model){
     	LOG.info("Login begin!");
-    	User user = userList.get(id);
     	if (userList.containsKey(id)) {
     		model.addAttribute("user", userList);
     		return "show";
@@ -55,6 +54,9 @@ public class UserController {
     public String showList(HttpServletRequest request,Model model){
     	LOG.info("showList begin!");
     	User user = (User)request.getSession().getAttribute("user");
+    	if(user == null) {
+    		return "error";
+    	}
     	LOG.info(user.getUserName());
     	model.addAttribute("user", userList);
         return "show";

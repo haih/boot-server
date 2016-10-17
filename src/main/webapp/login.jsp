@@ -14,7 +14,7 @@
   <body>
 
     <div class="container">
-      <form action="user/login" method="post" class="form-signin">
+      <form action="login" method="post" class="form-signin">
         <h2 class="form-signin-heading">Login</h2>
     <!--     <input id="userName" name="userName" type="text" autofocus> <br> -->
 	    	<input id="id" name="id" type="text" > <br>
