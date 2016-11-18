@@ -55,7 +55,7 @@ public class UserController {
     	LOG.info("showList begin!");
     	User user = (User)request.getSession().getAttribute("user");
     	if(user == null) {
-    		return "error";
+    		return "redirect:/";
     	}
     	LOG.info(user.getUserName());
     	model.addAttribute("user", userList);

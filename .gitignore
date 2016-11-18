@@ -5,3 +5,4 @@
 .project
 *.class
 .metadata
+WebContent/
