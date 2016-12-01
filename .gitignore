@@ -1,5 +1,13 @@
+*.class
+*.jar
+*.war
+*.ear
+.idea/
+*.iml
+*.eml
+*.pmd
+target/
 /bin/
-/target/
 .settings
 .classpath
 .project
