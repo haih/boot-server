@@ -1,2 +1,7 @@
-# ssm_practise
-SSM(spring+springMVC+mybatis)框架 实践
+# ssm-server
+
+## SSM practise base on spring+springMVC+mybatis.
+
+
+
+
