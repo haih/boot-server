@@ -6,7 +6,7 @@
 *.iml
 *.eml
 *.pmd
-target/
+*/target/
 /bin/
 .settings
 .classpath
