@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+	<turboFilter class="ch.qos.logback.classic.turbo.DynamicThresholdFilter">
+		<Key>loggerLevel</Key>
+		<DefaultThreshold>ERROR</DefaultThreshold>
+		<OnHigherOrEqual>ACCEPT</OnHigherOrEqual>
+		<OnLower>NEUTRAL</OnLower>
+		<MDCValueLevelPair>
+			<value>trace</value>
+			<level>TRACE</level>
+		</MDCValueLevelPair>
+		<MDCValueLevelPair>
+			<value>debug</value>
+			<level>DEBUG</level>
+		</MDCValueLevelPair>
+		<MDCValueLevelPair>
+			<value>info</value>
+			<level>INFO</level>
+		</MDCValueLevelPair>
+		<MDCValueLevelPair>
+			<value>warn</value>
+			<level>WARN</level>
+		</MDCValueLevelPair>
+		<MDCValueLevelPair>
+			<value>error</value>
+			<level>ERROR</level>
+		</MDCValueLevelPair>
+	</turboFilter>
+
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<layout class="ch.qos.logback.classic.PatternLayout">
+		<!--%d{pattern}:date; %X{MDC};%c{length}:fully-qualified class;
+		    %F : file; %L : line, %M:method -->
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %X{TRACKINGID}, %p,%c{50}, %F:%L, %M: %m%n</Pattern>
+		</layout>
+	</appender>
+	<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/Users/haih/Local/apache-tomcat-7.0.65/logs/ssm.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>90</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %X{TRACKINGID}, %p, %c{50}, %t, %ex, %F:%L, %M : %m%n</Pattern>
+		</layout>
+	</appender>
+	<appender name="FILE-ERROR" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<filter class="ch.qos.logback.classic.filter.LevelFilter">
+			<level>ERROR</level>
+			<OnMismatch>DENY</OnMismatch>
+			<OnMatch>ACCEPT</OnMatch>
+		</filter>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern>/Users/haih/Local/apache-tomcat-7.0.65/logs/ssm-err.%d{yyyy-MM-dd}.%i.log</fileNamePattern>
+			<maxHistory>90</maxHistory>
+			<timeBasedFileNamingAndTriggeringPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedFNATP">
+				<maxFileSize>100MB</maxFileSize>
+			</timeBasedFileNamingAndTriggeringPolicy>
+		</rollingPolicy>
+		<layout class="ch.qos.logback.classic.PatternLayout">
+			<Pattern>%d{yyyy-MM-dd HH:mm:ss.SSS}, %X{TRACKINGID}, %p, %c{50}, %t, %ex, %F:%L, %M : %m%n</Pattern>
+		</layout>
+	</appender>
+
+	<root level="ALL">
+		<appender-ref ref="STDOUT" />
+		<appender-ref ref="FILE" />
+		<appender-ref ref="FILE-ERROR" />
+	</root>
+</configuration>
