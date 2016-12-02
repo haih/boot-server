@@ -249,7 +249,8 @@
 					</additionalProjectnatures>
 				</configuration>
 			</plugin>
-						<!-- dependency插件 -->
+			
+			<!-- dependency插件 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -257,15 +258,5 @@
 			</plugin>
 		</plugins>
 	</build>
-	
-		<!-- 开发者信息 -->
-	<developers>  
-		<developer>
-			<id>thinkgem</id>
-			<name>WangZhen</name>
-			<email>thinkgem at 163.com</email>
-			<roles><role>Project lead</role></roles>
-			<timezone>+8</timezone>
-		</developer>
-	</developers>
+
 </project>

@@ -1,4 +1,4 @@
-package org.common;
+package com.haih.common;
 
 import junit.framework.Test;
 import junit.framework.TestCase;
