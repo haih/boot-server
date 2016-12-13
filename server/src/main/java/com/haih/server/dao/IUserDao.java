@@ -1,9 +1,12 @@
-package com.haih.db.dao;
+package com.haih.server.dao;
+
+
+import javax.annotation.Resource;
 
 
 import com.haih.common.bean.User;
 
-
+@Resource
 public interface IUserDao {
     int deleteByPrimaryKey(Integer id);
 

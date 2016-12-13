@@ -11,7 +11,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import com.haih.common.bean.User;
-import com.haih.db.dao.IUserDao;
+import com.haih.server.dao.IUserDao;
 import com.haih.server.service.IUserService;
 
 @Service("userService")

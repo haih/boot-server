@@ -42,7 +42,7 @@ public class LoginController {
 		return "error";
 	}	 
 	  
-    @RequestMapping(value = "/test",method = RequestMethod.GET)
+    @RequestMapping("/test")
     @ResponseBody
     public String test(HttpServletRequest request){
     	String auth = request.getHeader("Authorization");
