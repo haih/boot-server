@@ -1,6 +1,6 @@
-# boot-server
+# boot-service
 
-## backend server base on spring boot framework.
+## backend service base on spring boot framework.
 
 The client repo:https://github.com/haih/ssm-client
 
