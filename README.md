@@ -1,6 +1,6 @@
-# ssm-server
+# boot-server
 
-## SSM practise base on spring+springMVC+mybatis.
+## backend server base on spring boot framework.
 
 The client repo:https://github.com/haih/ssm-client
 
