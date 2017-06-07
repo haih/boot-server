@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.haih.server.service.IUserService;
 
-@Service("userService")
+@Service("userServiceimpl")
 public class UserServiceImpl implements IUserService{
     
     private static Logger LOG = LoggerFactory.getLogger(UserServiceImpl.class);

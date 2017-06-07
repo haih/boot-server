@@ -18,10 +18,10 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.inMemoryAuthentication()
-                .withUser("user1").password("secret1").roles("USER")
-                .and()
-                .withUser("user2").password("secret2").roles("USER");
+//        auth.inMemoryAuthentication()
+//                .withUser("user1").password("secret1").roles("USER")
+//                .and()
+//                .withUser("user2").password("secret2").roles("USER");
     }
 //    @Override
 //    protected void configure(HttpSecurity http) throws Exception {
@@ -35,6 +35,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         web
             // Define public access resources white list
             .ignoring()
+            .antMatchers("/login/**")
             	.antMatchers("/boot/**")
             	.antMatchers("/health/**")
                 .antMatchers("/css/**")
