@@ -18,33 +18,31 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-//        auth.inMemoryAuthentication()
-//                .withUser("user1").password("secret1").roles("USER")
-//                .and()
-//                .withUser("user2").password("secret2").roles("USER");
+        auth.inMemoryAuthentication()
+                .withUser("user1").password("secret1").roles("USER")
+                .and()
+                .withUser("user2").password("secret2").roles("USER");
     }
-//    @Override
-//    protected void configure(HttpSecurity http) throws Exception {
-//        http.authorizeRequests().anyRequest().fullyAuthenticated();
-//        http.httpBasic();
-//        http.csrf().disable();
-//    }
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http.authorizeRequests().anyRequest().fullyAuthenticated();
+        http.httpBasic();
+        http.csrf().disable();
+    }
     
     @Override
     public void configure(WebSecurity web) throws Exception {
         web
-            // Define public access resources white list
-            .ignoring()
-            .antMatchers("/login/**")
-            	.antMatchers("/boot/**")
-            	.antMatchers("/health/**")
-                .antMatchers("/css/**")
-                .antMatchers("/fonts/**")
-                .antMatchers("/html/**")
-                .antMatchers("/i18n/**")
-                .antMatchers("/img/**")
-                .antMatchers("/js/**")
-                .antMatchers("/libs/**");
+        // Define public access resources white list
+        .ignoring()
+        	.antMatchers("/**")
+            .antMatchers("/css/**")
+            .antMatchers("/fonts/**")
+            .antMatchers("/html/**")
+            .antMatchers("/i18n/**")
+            .antMatchers("/img/**")
+            .antMatchers("/js/**")
+            .antMatchers("/libs/**");
     }
     
 }
