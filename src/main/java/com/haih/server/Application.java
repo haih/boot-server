@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.haih.server;
 
 import org.springframework.boot.SpringApplication;

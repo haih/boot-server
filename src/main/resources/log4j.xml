@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="debug">
 	<Properties>
-		<Property name="LOG_HOME">${sys:catalina.home}/logs</Property>
+		<Property name="LOG_HOME">D:\logs</Property>
 		<Property name="LOG_FILE_NAME">${LOG_HOME}/boot.log</Property>
 		<Property name="LOG_FILE_NAME_PATTERN">${LOG_HOME}/ngapp-%d{yyyy-MM-dd}.%i.log</Property>
 		<Property name="LOG_PATTERN">%d{yyyy-MM-dd HH:mm:ss.SSS z(Z)} [%thread] %X{trackingID} %-5level %logger{36} - %msg%n</Property>

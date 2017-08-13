@@ -35,7 +35,5 @@ public class ApplicationTests {
 	
 	@Test
 	public void getUser() {
-		String userInfo = userClient.getUser();
-		System.out.println(userInfo);
 	}
 }
